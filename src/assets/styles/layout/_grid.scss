@@ -1,0 +1,53 @@
+// ===============================
+// GRID SYSTEM BASE
+// ===============================
+
+// Mixin para generar columnas dinámicas
+@mixin make-col($size) {
+  flex: 0 0 calc((100% / $columns) * $size - #{$gutter});
+  max-width: calc((100% / $columns) * $size - #{$gutter});
+  padding: $gutter / 2;
+}
+
+// ===============================
+// CONTAINERS Y ROWS
+// ===============================
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -#{$gutter / 2};
+}
+
+// ===============================
+// COLUMNAS RESPONSIVE
+// ===============================
+
+@for $i from 1 through $columns {
+  .col-#{$i} {
+    @include make-col($i);
+  }
+}
+
+@media (max-width: 768px) {
+  @for $i from 1 through $columns {
+    .col-sm-#{$i} {
+      @include make-col($i);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  @for $i from 1 through $columns {
+    .col-xs-#{$i} {
+      @include make-col($i);
+    }
+  }
+}

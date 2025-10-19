@@ -1,0 +1,83 @@
+@import "../../assets/styles/base/variables";
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+
+  &__item {
+    background: theme-color(card-bg);
+    padding: 1.25rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    &--selected {
+      border: 2px solid $primary-color;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.15);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.75rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    color: $text-color;
+  }
+
+  &__price {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: $primary-color;
+    white-space: nowrap; // evita saltos de línea
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+
+    .plans__currency {
+      font-size: 1.05rem;
+    }
+
+    .plans__amount {
+      font-size: 1.15rem;
+    }
+  }
+
+  &__features {
+    list-style: disc;
+    margin-left: 1rem;
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  &__age {
+    font-size: 0.9rem;
+    color: $secondary-color;
+    font-weight: 600;
+    margin-top: 0.75rem;
+  }
+
+  &__selected {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    border: 1px solid #dce3ef;
+    color: $secondary-color;
+    font-weight: 600;
+  }
+}
