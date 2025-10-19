@@ -1,0 +1,66 @@
+@import "../../assets/styles/base/variables";
+
+.quote-selector {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  &__title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: $text-color;
+    margin-bottom: 0.5rem;
+  }
+
+  &__subtitle {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  &__options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+}
+
+.quote-card {
+  background: #fff;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  width: 240px;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+
+  &__icon {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  &__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text-color;
+    margin-bottom: 0.5rem;
+  }
+
+  &__text {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.4;
+  }
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  &--active {
+    border-color: $secondary-color;
+    box-shadow: 0 0 0 4px rgba($secondary-color, 0.1);
+  }
+}

@@ -18,16 +18,12 @@ export default function PlansList({ plans, selectedPlan, onSelect }: Props) {
         <div
           key={p.name}
           className={`plans__item ${selectedPlan === p.name ? "plans__item--selected" : ""}`}
-          role="button"
-          tabIndex={0}
-          onClick={() => onSelect?.(p.name)}
-          onKeyDown={(e) => e.key === "Enter" && onSelect?.(p.name)}
         >
           <div className="plans__header">
             <h3 className="plans__title">{p.name}</h3>
             <div className="plans__price">
-              <span className="plans__currency">S/</span>
-              <span className="plans__amount">{p.price}</span>
+              <span className="plans__currency">$</span>
+              <span className="plans__amount">{p.price} al mes</span>
             </div>
           </div>
 
@@ -38,8 +34,16 @@ export default function PlansList({ plans, selectedPlan, onSelect }: Props) {
               </li>
             ))}
           </ul>
-
-          <p className="plans__age">Edad máxima: {p.age} años</p>
+          
+          <div className="plans__footer">
+            <button
+              type="button"
+              className="plans__button"
+              onClick={() => onSelect?.(p.name)}
+            >
+              Seleccionar Plan
+            </button>
+          </div>
         </div>
       ))}
     </section>
