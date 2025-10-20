@@ -93,7 +93,8 @@ function App() {
                 )}
 
                 {step === "summary" && userData && selectedPlan && (
-                  <Summary user={userData} plan={selectedPlan} onBack={handleBackToPlans} />
+                  /* <-- aquí PASAMOS formData al Summary (cambio mínimo) */
+                  <Summary user={userData} plan={selectedPlan} formData={formData} onBack={handleBackToPlans} />
                 )}
               </div>
             </div>
