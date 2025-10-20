@@ -10,7 +10,7 @@
     background: theme-color(card-bg);
     padding: 1.25rem;
     border-radius: 12px;
-    cursor: pointer;
+    cursor: default;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 
@@ -23,6 +23,14 @@
       border: 2px solid $primary-color;
       box-shadow: 0 0 0 3px rgba($primary-color, 0.15);
     }
+
+    // layout to keep button at bottom
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 0;
   }
 
   &__header {
@@ -41,7 +49,7 @@
     font-weight: 700;
     font-size: 1.1rem;
     color: $primary-color;
-    white-space: nowrap; // evita saltos de línea
+    white-space: nowrap;
     display: flex;
     align-items: baseline;
     gap: 0.25rem;
@@ -61,6 +69,7 @@
     color: #555;
     font-size: 0.9rem;
     line-height: 1.4;
+    margin-bottom: 1rem;
   }
 
   &__age {
@@ -81,19 +90,10 @@
     font-weight: 600;
   }
 
-  &__item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    height: 100%; 
-    padding-bottom: 0; 
-  }
-
   &__footer {
-    margin-top: auto; 
+    margin-top: auto;
     text-align: center;
-    padding: 1rem 1.25rem;
+    padding: 1rem 1.25rem 0 1.25rem;
   }
 
   &__button {
@@ -105,7 +105,7 @@
     border-radius: 12px;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
-    text-transform: none;
+    text-transform: none; // mantiene minúsculas
     transition: all 0.25s ease-in-out;
     box-shadow: 0 4px 10px rgba(236, 0, 0, 0.15);
     width: 100%;
@@ -127,5 +127,9 @@
     }
   }
 
-  
+  // mensaje por defecto si no hay planes
+  &__empty {
+    color: #555;
+    margin-top: 1rem;
+  }
 }
