@@ -5,10 +5,10 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
   margin-top: 1rem;
-
+  
   &__item {
     background: theme-color(card-bg);
-    padding: 1.25rem;
+    padding: 1.25rem; 
     border-radius: 12px;
     cursor: default;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -23,8 +23,7 @@
       border: 2px solid $primary-color;
       box-shadow: 0 0 0 3px rgba($primary-color, 0.15);
     }
-
-    // layout to keep button at bottom
+    
     position: relative;
     display: flex;
     flex-direction: column;
@@ -93,7 +92,7 @@
   &__footer {
     margin-top: auto;
     text-align: center;
-    padding: 1rem 1.25rem 0 1.25rem;
+    padding: 1rem 1.25rem 1rem 1.25rem; 
   }
 
   &__button {
@@ -105,10 +104,11 @@
     border-radius: 12px;
     padding: 0.75rem 1.5rem;
     cursor: pointer;
-    text-transform: none; // mantiene minúsculas
+    text-transform: none; 
     transition: all 0.25s ease-in-out;
     box-shadow: 0 4px 10px rgba(236, 0, 0, 0.15);
-    width: 100%;
+    width: 100%;    
+    margin-top: 0.5rem;
 
     &:hover {
       background-color: darken($primary-color, 8%);
@@ -126,8 +126,7 @@
       outline-offset: 2px;
     }
   }
-
-  // mensaje por defecto si no hay planes
+  
   &__empty {
     color: #555;
     margin-top: 1rem;
