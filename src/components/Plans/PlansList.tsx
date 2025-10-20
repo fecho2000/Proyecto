@@ -42,7 +42,7 @@ export default function PlansList({ plans, selectedOption, userAge, onSelectPlan
           <div className="plans__header">
             <h3 className="plans__title">{p.name}</h3>
             <div className="plans__price">
-              <span className="plans__currency">S/</span>
+              <span className="plans__currency">$ </span>
               <span className="plans__amount">{p.price} al mes</span>
             </div>
           </div>
