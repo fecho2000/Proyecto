@@ -1,4 +1,3 @@
-
 export type User = {
   name: string;
   lastName: string;
@@ -14,4 +13,10 @@ export type Plan = {
 
 export type PlansResponse = {
   list: Plan[];
+};
+
+export type FormData = {
+  tipoDocumento: string;      
+  numeroDocumento: string;    
+  numeroCelular: string;      
 };
